@@ -14,7 +14,7 @@ APlayerChar::APlayerChar()
 	PlayerCamComp->SetupAttachment(GetMesh(), "head");
 	// Share rotation with controller
 	PlayerCamComp->bUsePawnControlRotation = true;
-
+	//Setup and identify the types of resources
 	ResourcesArray.SetNum(3);
 	ResourcesNameArray.Add(TEXT("Wood"));
 	ResourcesNameArray.Add(TEXT("Stone"));
@@ -85,7 +85,7 @@ void APlayerChar::FindObject()
 	QueryParams.AddIgnoredActor(this);
 	QueryParams.bTraceComplex = true;
 	QueryParams.bReturnFaceIndex = true;
-
+	//Set Stamina and also allow player interaction with objects and also notifications of pickup
 	if (GetWorld()->LineTraceSingleByChannel(HitResult, StartLocation, EndLocation, ECC_Visibility, QueryParams))
 	{
 		AResourceM* HitResource = Cast<AResourceM>(HitResult.GetActor());
@@ -161,7 +161,7 @@ void APlayerChar::DecreaseStats()
 		SetHealth(-3.0f);
 	}
 }
-
+//Set resource type and amount
 void APlayerChar::GiveResource(float amount, FString resourceType)
 {
 	if (resourceType == "Wood")

@@ -55,10 +55,10 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Stats")
 	    float Stamina = 100.0f;
-
+    //Identify resources
 	UPROPERTY(EditAnywhere, Category = "Resources")
 	    int Wood;
-
+	
 	UPROPERTY(EditAnywhere, Category = "Resources")
 	    int Stone;
 
@@ -70,7 +70,7 @@ public:
 
 	UPROPERTY(EditAnywhere, Category = "Resources")
 	    TArray<FString> ResourcesNameArray;
-
+	//Identify and create hit maker and hit decal
 	UPROPERTY(EditAnywhere, Category = "HitMaker")
 	    UMaterialInterface* hitDecal;
 
