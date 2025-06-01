@@ -39,6 +39,10 @@ void APlayerChar::BeginPlay()
 void APlayerChar::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	
+	//Every tick will update variables
+	playerUI->UpdateBars(Health, Hunger, Stamina);
+
 	//Allow player to spawn building parts alongs if it's valid.
 	if (isBuilding)
 	{

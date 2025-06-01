@@ -8,6 +8,7 @@
 #include "ResourceM.h"
 #include "Kismet/GameplayStatics.h"
 #include "BuildingPart.h"
+#include "PlayerWidget.h"
 #include "PlayerChar.generated.h"
 
 UCLASS()
@@ -87,6 +88,10 @@ public:
 	//Individual class that set a variable to spawn of building parts.
 	UPROPERTY()
 	    ABuildingPart* spawnedPart;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		UPlayerWidget* playerUI;
+
 
 //Set player stats as functions
 	UFUNCTION(BlueprintCallable)
