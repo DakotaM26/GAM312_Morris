@@ -90,8 +90,7 @@ public:
 	    ABuildingPart* spawnedPart;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-		UPlayerWidget* playerUI;
-
+	    UPlayerWidget* playerUI;
 
 //Set player stats as functions
 	UFUNCTION(BlueprintCallable)
