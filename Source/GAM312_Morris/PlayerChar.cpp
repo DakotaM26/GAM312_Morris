@@ -32,6 +32,12 @@ void APlayerChar::BeginPlay()
 	//Stats timer is set for player at the beginning.
 	FTimerHandle StatsTimerHandle;
 	GetWorld()->GetTimerManager().SetTimer(StatsTimerHandle, this, &APlayerChar::DecreaseStats, 2.0f, true);
+	//If Widget is valied it would set the initial values
+	if (objWidget)
+	{
+		objWidget->UpdatebuildObj(0.0f);
+		objWidget->UpdatematOBJ(0.0f);
+	}
 	
 }
 
@@ -39,7 +45,7 @@ void APlayerChar::BeginPlay()
 void APlayerChar::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
+	//Tick update bars
 	playerUI->UpdateBars(Health, Hunger, Stamina);
 
 	//Allow player to spawn building parts alongs if it's valid.
@@ -123,6 +129,10 @@ void APlayerChar::FindObject()
 					{
 						GiveResource(resourceValue, hitName);
 
+						matsCollected = matsCollected + resourceValue;
+
+						objWidget->UpdatematOBJ(matsCollected);
+
 						check(GEngine != nullptr);
 						GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("Resource Collection"));
 
@@ -144,7 +154,9 @@ void APlayerChar::FindObject()
 	else
 	{
 		isBuilding = false;
-		
+		objectsBuilt = objectsBuilt + 1.0f;
+
+		objWidget->UpdatebuildObj(objectsBuilt);
 	}
 
 }
