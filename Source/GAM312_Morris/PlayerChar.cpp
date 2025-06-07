@@ -32,7 +32,7 @@ void APlayerChar::BeginPlay()
 	//Stats timer is set for player at the beginning.
 	FTimerHandle StatsTimerHandle;
 	GetWorld()->GetTimerManager().SetTimer(StatsTimerHandle, this, &APlayerChar::DecreaseStats, 2.0f, true);
-	//If Widget is valied it would set the initial values
+	//If Widget is valied it would set the initial values with the two functions.
 	if (objWidget)
 	{
 		objWidget->UpdatebuildObj(0.0f);
@@ -128,7 +128,7 @@ void APlayerChar::FindObject()
 					if (HitResource->totalResource > resourceValue)
 					{
 						GiveResource(resourceValue, hitName);
-
+						//Sets variable to the resource value.
 						matsCollected = matsCollected + resourceValue;
 
 						objWidget->UpdatematOBJ(matsCollected);
