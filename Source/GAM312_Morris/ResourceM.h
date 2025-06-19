@@ -26,21 +26,21 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	UPROPERTY(EditAnywhere)
-	FString resourceName = "Wood";
+	    FString resourceName = "Wood";
 
 	UPROPERTY(EditAnywhere)
-	int resourceAmount = 5;
+	    int resourceAmount = 5;
 
 	UPROPERTY(EditAnywhere)
-	int totalResource = 100;
+	    int totalResource = 100;
 
 	UPROPERTY()
-	FText tempText;
+	    FText tempText;
 
 	UPROPERTY(EditAnywhere)
-	UTextRenderComponent* ResourceNameTxt;
+	    UTextRenderComponent* ResourceNameTxt;
 
 	UPROPERTY(EditAnywhere)
-	UStaticMeshComponent* Mesh;
+	    UStaticMeshComponent* Mesh;
 
 };

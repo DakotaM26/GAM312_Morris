@@ -33,102 +33,102 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	UFUNCTION()
-	void MoveForward(float axisValue);
+	    void MoveForward(float axisValue);
 
 	UFUNCTION()
-	void MoveRight(float axisValue);
+	    void MoveRight(float axisValue);
 
 	UFUNCTION()
-	void StartJump();
+	    void StartJump();
 
 	UFUNCTION()
-	void StopJump();
+	    void StopJump();
 
 	UFUNCTION()
-	void FindObject();
+	    void FindObject();
 	//Camera is set and function
 	UPROPERTY(VisibleAnywhere)
-	UCameraComponent* PlayerCamComp;
+	    UCameraComponent* PlayerCamComp;
 	//Identify player stats
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Stats")
-	float Health = 100.0f;
+	    float Health = 100.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Stats")
-	float Hunger = 100.0f;
+	    float Hunger = 100.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Stats")
-	float Stamina = 100.0f;
+	    float Stamina = 100.0f;
 	//Identify resources
 	UPROPERTY(EditAnywhere, Category = "Resources")
-	int Wood;
+	    int Wood;
 
 	UPROPERTY(EditAnywhere, Category = "Resources")
-	int Stone;
+	    int Stone;
 
 	UPROPERTY(EditAnywhere, Category = "Resources")
-	int Berry;
+	    int Berry;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Resources")
-	TArray<int> ResourcesArray;
+	    TArray<int> ResourcesArray;
 
 	UPROPERTY(EditAnywhere, Category = "Resources")
-	TArray<FString> ResourcesNameArray;
+	    TArray<FString> ResourcesNameArray;
 
 	//Identify and create hit maker and hit decal
 	UPROPERTY(EditAnywhere, Category = "HitMaker")
-	UMaterialInterface* hitDecal;
+	    UMaterialInterface* hitDecal;
 
 	//A Array will store the informantion on how many each buidling item.
 	UPROPERTY(Editanywhere, BlueprintReadWrite, Category = "Building Supplies")
-	TArray<int> BuildingArray;
+	    TArray<int> BuildingArray;
 
 	//Bool determines if we are in the act of building.
 	UPROPERTY()
-	bool isBuilding;
+	    bool isBuilding;
 
 	//Tsubclass help select our childern when spawning.
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
-	TSubclassOf<ABuildingPart> BuildPartClass;
+	    TSubclassOf<ABuildingPart> BuildPartClass;
 
 	//Individual class that set a variable to spawn of building parts.
 	UPROPERTY()
-	ABuildingPart* spawnedPart;
+	    ABuildingPart* spawnedPart;
 	//Reference the function
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	UPlayerWidget* playerUI;
+	    UPlayerWidget* playerUI;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	UObjectiveWidget* objWidget;
+	    UObjectiveWidget* objWidget;
 
 	UPROPERTY()
-	float objectsBuilt;
+	    float objectsBuilt;
 
 	UPROPERTY()
-	float matsCollected;
+	    float matsCollected;
 
 	//Set player stats as functions
 	UFUNCTION(BlueprintCallable)
-	void SetHealth(float amount);
+	    void SetHealth(float amount);
 
 	UFUNCTION(BlueprintCallable)
-	void SetHunger(float amount);
+	    void SetHunger(float amount);
 
 	UFUNCTION(BlueprintCallable)
-	void SetStamina(float amount);
+	    void SetStamina(float amount);
 
 	UFUNCTION()
-	void DecreaseStats();
+	    void DecreaseStats();
 
 	UFUNCTION()
-	void GiveResource(float amount, FString resourceType);
+	    void GiveResource(float amount, FString resourceType);
 	//Determine what object we will build.
 	UFUNCTION(BlueprintCallable)
-	void UpdateResources(float woodAmount, float stoneAmount, FString buildingObject);
+	    void UpdateResources(float woodAmount, float stoneAmount, FString buildingObject);
 	//Allow player to spawn a building.
 	UFUNCTION(BlueprintCallable)
-	void SpawnBuilding(int buildingID, bool& isSuccess);
+	    void SpawnBuilding(int buildingID, bool& isSuccess);
 	//Allow player to rotate/rotate building function.
 	UFUNCTION()
-	void RotateBuilding();
+	    void RotateBuilding();
 };

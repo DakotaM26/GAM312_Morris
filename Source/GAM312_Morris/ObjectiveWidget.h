@@ -16,9 +16,9 @@ class GAM312_MORRIS_API UObjectiveWidget : public UUserWidget
 	//Update object and build.
 public:
 	UFUNCTION(BlueprintImplementableEvent)
-	void UpdatematOBJ(float matsCollected);
+	    void UpdatematOBJ(float matsCollected);
 
 	UFUNCTION(BlueprintImplementableEvent)
-	void UpdatebuildObj(float objectBuilt);
+	    void UpdatebuildObj(float objectBuilt);
 
 };

@@ -25,9 +25,9 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	UPROPERTY(EditAnywhere)
-	UStaticMeshComponent* Mesh;
+	    UStaticMeshComponent* Mesh;
 
 	UPROPERTY(EditAnywhere)
-	UArrowComponent* PivotArrow;
+	    UArrowComponent* PivotArrow;
 
 };

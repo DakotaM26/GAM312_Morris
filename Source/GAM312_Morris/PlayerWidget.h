@@ -16,5 +16,5 @@ class GAM312_MORRIS_API UPlayerWidget : public UUserWidget
 	//Update our bars
 public:
 	UFUNCTION(BlueprintImplementableEvent)
-	void UpdateBars(float Health1, float Hunger1, float Stamina1);
+	    void UpdateBars(float Health1, float Hunger1, float Stamina1);
 };
