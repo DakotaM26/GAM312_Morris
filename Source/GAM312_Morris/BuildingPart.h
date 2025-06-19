@@ -11,8 +11,8 @@ UCLASS()
 class GAM312_MORRIS_API ABuildingPart : public AActor
 {
 	GENERATED_BODY()
-	
-public:	
+
+public:
 	// Sets default values for this actor's properties
 	ABuildingPart();
 
@@ -20,14 +20,14 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
+public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
 	UPROPERTY(EditAnywhere)
-	    UStaticMeshComponent* Mesh;
+	UStaticMeshComponent* Mesh;
 
 	UPROPERTY(EditAnywhere)
-	    UArrowComponent* PivotArrow;
+	UArrowComponent* PivotArrow;
 
 };

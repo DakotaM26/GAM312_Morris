@@ -6,7 +6,7 @@
 // Sets default values
 AResourceM::AResourceM()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 	ResourceNameTxt = CreateDefaultSubobject<UTextRenderComponent>(TEXT("Text Render"));
 	Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
@@ -21,7 +21,7 @@ AResourceM::AResourceM()
 void AResourceM::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
 	tempText = tempText.FromString(resourceName);
 
 	ResourceNameTxt->SetText(tempText);
